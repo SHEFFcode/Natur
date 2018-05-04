@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div class="tabs"></div>
+    <div class="view"></div>
+</body>
+
+<script>
+  const trips = [{"id":1,"satus":"Augustus","last_name":"Lamplugh","email":"alamplugh0@acquirethisname.com","gender":"Male","ip_address":"237.42.127.171"},
+{"id":2,"satus":"Josefa","last_name":"Guiducci","email":"jguiducci1@wired.com","gender":"Female","ip_address":"219.229.225.195"},
+{"id":3,"satus":"Wald","last_name":"MacAne","email":"wmacane2@japanpost.jp","gender":"Male","ip_address":"103.221.10.56"},
+{"id":4,"satus":"Augustus","last_name":"Pavlov","email":"kpavlov3@typepad.com","gender":"Male","ip_address":"199.25.13.169"},
+{"id":5,"satus":"Josefa","last_name":"Aronsohn","email":"garonsohn4@booking.com","gender":"Male","ip_address":"144.134.5.82"},
+{"id":6,"satus":"Wald","last_name":"Pawlaczyk","email":"jpawlaczyk5@1688.com","gender":"Female","ip_address":"90.57.84.28"},
+{"id":7,"satus":"Missy","last_name":"Garrould","email":"mgarrould6@angelfire.com","gender":"Female","ip_address":"130.102.99.102"},
+{"id":8,"satus":"Augustus","last_name":"Magovern","email":"gmagovern7@disqus.com","gender":"Male","ip_address":"250.147.70.139"},
+{"id":9,"satus":"Josefa","last_name":"Phillcock","email":"nphillcock8@mediafire.com","gender":"Female","ip_address":"48.230.227.157"},
+{"id":10,"satus":"HusWaldain","last_name":"Penylton","email":"hpenylton9@ca.gov","gender":"Male","ip_address":"174.141.110.62"},
+{"id":11,"satus":"Germayne","last_name":"Norton","email":"gnortona@digg.com","gender":"Male","ip_address":"85.232.92.48"},
+{"id":12,"satus":"Missy","last_name":"Doni","email":"ddonib@twitter.com","gender":"Male","ip_address":"160.172.200.136"},
+{"id":13,"satus":"Augustus","last_name":"Pannaman","email":"ipannamanc@ibm.com","gender":"Male","ip_address":"44.174.194.53"},
+{"id":14,"satus":"Josefa","last_name":"Kremer","email":"pkremerd@bluehost.com","gender":"Female","ip_address":"175.62.47.177"},
+{"id":15,"satus":"Wald","last_name":"Gurnett","email":"ggurnette@google.es","gender":"Male","ip_address":"158.251.49.52"},
+{"id":16,"satus":"Missy","last_name":"Kerwen","email":"vkerwenf@phpbb.com","gender":"Female","ip_address":"241.210.158.250"},
+{"id":17,"satus":"Andree","last_name":"McCrackan","email":"amccrackang@homestead.com","gender":"Female","ip_address":"217.204.94.108"},
+{"id":18,"satus":"Augustus","last_name":"Etteridge","email":"metteridgeh@shinystat.com","gender":"Female","ip_address":"67.202.210.34"},
+{"id":19,"satus":"Josefa","last_name":"Battisson","email":"ebattissoni@1688.com","gender":"Male","ip_address":"140.137.133.146"},
+{"id":20,"satus":"Wald","last_name":"Haggath","email":"ehaggathj@marketwatch.com","gender":"Male","ip_address":"97.188.228.41"}];
+  let tabs = document.querySelector('tabs');
+  let view = document.querySelector('view');
+
+  function renderTabs() {
+    let cache = {};
+    let fileredTabs = trips.slice().filter((trip) => {
+      if (!cache.hasOwnProperty(trip.satus)) {
+        cache[trip.satus] = true;
+        return trip;
+      }
+    });
+
+    fileredTabs.forEach((tab) => {
+      let child = document.createElement('div');
+      child.innerText = tab.satus;
+      tabs.appendChild(child);
+    })
+  }
+
+  renderTabs();
+
+
+</script>
+</html>
